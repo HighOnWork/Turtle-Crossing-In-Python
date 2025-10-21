@@ -15,6 +15,7 @@ turtle_crossing_screen.My_Game_Screen.onkeypress(key="w", fun=player.move_turtle
 
 while True:
     turtle_crossing_screen.My_Game_Screen.update()
+    cars.location_of_cars()
     cars.color(cars.color_of_car())
     scored_points.give_score()
     if player.ycor() >= 250:
