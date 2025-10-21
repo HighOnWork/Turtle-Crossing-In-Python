@@ -13,6 +13,8 @@ class my_score(Turtle):
         self.penup()
         self.goto(0, 270)
         self.game_score = SCORE
+    def give_score(self):
         self.write(self.game_score, align=ALIGNMENT, font=(FONT, FONT_SIZE, FONT_TYPE))
     def score_increase(self):
+        self.clear()
         self.game_score += 1
