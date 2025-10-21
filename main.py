@@ -23,13 +23,11 @@ def make_turtles():
         new_car = enemy_cars()
         new_car.location_of_cars()
         enemy.append(new_car)
-
+        enemy[i].color(enemy[i].color_of_car())
 
 while True:
     make_turtles()
     turtle_crossing_screen.My_Game_Screen.update()
-    
-    enemy[num_of_turtles - 1].color(enemy[num_of_turtles - 1].color_of_car())
     scored_points.give_score()
     if player.ycor() >= 250:
         scored_points.score_increase()
