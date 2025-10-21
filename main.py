@@ -17,6 +17,7 @@ scored_points = my_score()
 turtle_crossing_screen.My_Game_Screen.onkeypress(key="w", fun=player.move_turtle)
 
 def make_turtles():
+    global enemy
     global num_of_turtles
     num_of_turtles = random.randint(0, 10)
     for i in range(0, num_of_turtles):
@@ -26,7 +27,9 @@ def make_turtles():
         enemy[i].color(enemy[i].color_of_car())
 
 while True:
-    make_turtles()
+    make_turtles() 
+    for i in range(0, num_of_turtles):
+        enemy[i].move_car()
     turtle_crossing_screen.My_Game_Screen.update()
     scored_points.give_score()
     if player.ycor() >= 250:

@@ -20,3 +20,6 @@ class enemy_cars(Turtle):
     def location_of_cars(self):
         Y_POSITION = random.randint(-280, 250)
         self.goto(280, Y_POSITION)
+    def move_car(self):
+        random_speed_for_car = random.randint(0, 10)
+        self.forward(random_speed_for_car)
