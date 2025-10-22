@@ -5,7 +5,9 @@ from GameScore import my_score
 from MyWalkingTurtle import walking_player
 from enemy import enemy_cars
 import time
+
 MOVE_SPEED = 20
+y_pos = -250
 
 num_of_turtles = None
 
@@ -17,16 +19,16 @@ scored_points = my_score()
 turtle_crossing_screen.My_Game_Screen.onkeypress(key="w", fun=player.move_turtle)
 
 def make_turtles():
+    global y_pos
     global enemy
     global num_of_turtles
     for i in range(0, 20):
-        new_car = enemy_cars()
+        new_car = enemy_cars(Y_POSITION=y_pos)
         new_car.location_of_cars()
         new_car.color(new_car.color_of_car())
         enemy.append(new_car)
+        y_pos += 25
         
-        
-
 make_turtles() 
 
 while True:
@@ -34,7 +36,7 @@ while True:
     for i in range(0, 20):
         enemy[i].move_car()
         if enemy[i].xcor() <= -280:
-            enemy.go_back()
+            enemy[i].go_back()
         if abs(player.xcor() - enemy[i].xcor()) < 20 and abs(player.ycor() - enemy[i].ycor()) < 20:
             print("HIT")
     time.sleep(0.01)
