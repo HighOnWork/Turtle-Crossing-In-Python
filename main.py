@@ -29,7 +29,7 @@ def make_turtles():
         enemy.append(new_car)
         y_pos += 25
         
-make_turtles() 
+make_turtles()
 
 while True:
     turtle_crossing_screen.My_Game_Screen.update()
@@ -38,7 +38,7 @@ while True:
         if enemy[i].xcor() <= -280:
             enemy[i].go_back()
         if abs(player.xcor() - enemy[i].xcor()) < 20 and abs(player.ycor() - enemy[i].ycor()) < 20:
-            print("HIT")
+            break
     time.sleep(0.01)
     scored_points.give_score()
     if player.ycor() >= 250:
