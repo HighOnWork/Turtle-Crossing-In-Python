@@ -19,27 +19,30 @@ turtle_crossing_screen.My_Game_Screen.onkeypress(key="w", fun=player.move_turtle
 def make_turtles():
     global enemy
     global num_of_turtles
-    num_of_turtles = random.randint(1, 10)
-    for i in range(0, num_of_turtles):
+    for i in range(0, 20):
         new_car = enemy_cars()
         new_car.location_of_cars()
+        new_car.color(new_car.color_of_car())
         enemy.append(new_car)
-        enemy[i].color(enemy[i].color_of_car())
+        
+        
 
 make_turtles() 
 
 while True:
     turtle_crossing_screen.My_Game_Screen.update()
-    for i in range(0, num_of_turtles):
+    for i in range(0, 20):
         enemy[i].move_car()
+        if enemy[i].xcor() <= -280:
+            enemy.go_back()
         if abs(player.xcor() - enemy[i].xcor()) < 20 and abs(player.ycor() - enemy[i].ycor()) < 20:
             print("HIT")
-    make_turtles()
     time.sleep(0.01)
     scored_points.give_score()
     if player.ycor() >= 250:
         scored_points.score_increase()
         player.goto(0, -280)
+    
         
     
 
