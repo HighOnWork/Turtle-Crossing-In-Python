@@ -18,3 +18,4 @@ class my_score(Turtle):
     def score_increase(self):
         self.clear()
         self.game_score += 1
+        

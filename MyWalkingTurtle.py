@@ -11,3 +11,4 @@ class walking_player(Turtle):
         self.turtle_speed = move_speed
     def move_turtle(self):
         self.forward(self.turtle_speed)
+        

@@ -43,7 +43,4 @@ while True:
         scored_points.score_increase()
         player.goto(0, -280)
     
-        
-    
-
 turtle.mainloop()

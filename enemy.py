@@ -24,3 +24,4 @@ class enemy_cars(Turtle):
         self.forward(-random_speed_for_car)
     def go_back(self):
         self.location_of_cars()
+        

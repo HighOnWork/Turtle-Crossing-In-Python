@@ -7,4 +7,3 @@ class GameScreen():
         self.My_Game_Screen.tracer(0)
         self.My_Game_Screen.setup(600, 600)
         self.My_Game_Screen.listen()
-
