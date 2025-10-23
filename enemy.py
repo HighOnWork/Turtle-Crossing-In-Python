@@ -21,7 +21,7 @@ class enemy_cars(Turtle):
         X_POSITION = random.randint(300, 1500)
         self.goto(X_POSITION, self.Y_POSITION)
     def move_car(self, SPEED_OF_CAR):
-        random_speed_for_car = random.randint(0, SPEED_OF_CAR)
+        random_speed_for_car = random.uniform(0, SPEED_OF_CAR)
         self.forward(-random_speed_for_car)
     def go_back(self):
         self.location_of_cars()

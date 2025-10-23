@@ -18,4 +18,8 @@ class my_score(Turtle):
     def score_increase(self):
         self.clear()
         self.game_score += 1
-        
+    def final_score(self):
+        self.clear()
+        self.goto(0, 0)
+        FONT_SIZE = 45
+        self.write(self.game_score, align="center", font=(FONT, FONT_SIZE, FONT_TYPE))

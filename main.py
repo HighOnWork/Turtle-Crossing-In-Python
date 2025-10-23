@@ -51,5 +51,6 @@ while True:
         for i in range(0, 20):
             enemy[i].location_of_cars()
             time_to_sleep *= 0.9
-    
+            SPEED_OF_MY_CAR += 0.05
+scored_points.final_score()
 turtle.mainloop()
