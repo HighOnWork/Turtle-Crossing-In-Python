@@ -41,6 +41,8 @@ while True:
             enemy[i].go_back()
         if abs(player.xcor() - enemy[i].xcor()) < 20 and abs(player.ycor() - enemy[i].ycor()) < 20:
             break
+    if abs(player.xcor() - enemy[i].xcor()) < 20 and abs(player.ycor() - enemy[i].ycor()) < 20:
+            break
     time.sleep(time_to_sleep)
     scored_points.give_score()
     if player.ycor() >= 250:
