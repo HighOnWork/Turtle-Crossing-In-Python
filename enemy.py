@@ -18,10 +18,10 @@ class enemy_cars(Turtle):
         return color
     def location_of_cars(self):
         # Y_POSITION = random.randint(-280, 250)
-        X_POSITION = random.randint(280, 1000)
+        X_POSITION = random.randint(300, 1500)
         self.goto(X_POSITION, self.Y_POSITION)
-    def move_car(self):
-        random_speed_for_car = random.randint(0, 5)
+    def move_car(self, SPEED_OF_CAR):
+        random_speed_for_car = random.randint(0, SPEED_OF_CAR)
         self.forward(-random_speed_for_car)
     def go_back(self):
         self.location_of_cars()

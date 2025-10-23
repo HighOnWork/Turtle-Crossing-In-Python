@@ -6,9 +6,10 @@ from MyWalkingTurtle import walking_player
 from enemy import enemy_cars
 import time
 
-MOVE_SPEED = 20
+SPEED_OF_MY_CAR = 5
+MOVE_SPEED = 30
 y_pos = -250
-
+time_to_sleep = 0.01
 num_of_turtles = None
 
 enemy = []
@@ -20,6 +21,7 @@ turtle_crossing_screen.My_Game_Screen.onkeypress(key="w", fun=player.move_turtle
 
 def make_turtles():
     global y_pos
+    global SPEED_OF_MY_CAR
     global enemy
     global num_of_turtles
     for i in range(0, 20):
@@ -34,15 +36,18 @@ make_turtles()
 while True:
     turtle_crossing_screen.My_Game_Screen.update()
     for i in range(0, 20):
-        enemy[i].move_car()
+        enemy[i].move_car(SPEED_OF_MY_CAR)
         if enemy[i].xcor() <= -280:
             enemy[i].go_back()
         if abs(player.xcor() - enemy[i].xcor()) < 20 and abs(player.ycor() - enemy[i].ycor()) < 20:
             break
-    time.sleep(0.01)
+    time.sleep(time_to_sleep)
     scored_points.give_score()
     if player.ycor() >= 250:
         scored_points.score_increase()
         player.goto(0, -280)
+        for i in range(0, 20):
+            enemy[i].location_of_cars()
+            time_to_sleep *= 0.9
     
 turtle.mainloop()
